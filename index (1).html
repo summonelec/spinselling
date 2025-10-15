@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPIN Selling Training System - Summon Electronics</title>
+    <meta name="description" content="Summon Electronics SPIN Selling training system: 30-day roadmap, pocket guide, objection handling, and practice scenarios tailored to electronics manufacturing and sourcing.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23667eea'/%3E%3Cpath d='M16 34h32M24 22l8 20 8-20' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6; color: #333; background: #f5f5f5;
+        }
+        .topbar {
+            display:flex; gap:10px; align-items:center; justify-content:space-between;
+            padding: 0.5rem 1rem; background:#111827; color:#e5e7eb; border-bottom:1px solid rgba(255,255,255,.08);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .topbar a { text-decoration:none; color:#e5e7eb; padding:.4rem .7rem; border-radius:8px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.06); font-weight:600; }
+        .topbar a:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.3); }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .header p { opacity: 0.9; font-size: 1.1rem; }
+        .container { display: flex; max-width: 1400px; margin: 0 auto; background: white; }
+        .sidebar {
+            width: 280px; background: #2d3748; color: white; padding: 2rem 0;
+            min-height: calc(100vh - 120px); position: sticky; top: 0;
+        }
+        .sidebar h3 {
+            padding: 0 1.5rem; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase;
+            letter-spacing: 1px; color: #a0aec0;
+        }
+        .nav-item { padding: 0.75rem 1.5rem; cursor: pointer; transition: all 0.3s; border-left: 3px solid transparent; }
+        .nav-item:hover { background: #4a5568; border-left-color: #667eea; }
+        .nav-item.active { background: #4a5568; border-left-color: #667eea; font-weight: 600; }
+        .main-content { flex: 1; padding: 3rem; overflow-y: auto; }
+        .section { display: none; }
+        .section.active { display: block; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { color: #667eea; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0; font-size: 1.8rem; }
+        h3 { color: #2d3748; margin: 2rem 0 1rem 0; font-size: 1.4rem; }
+        h4 { color: #4a5568; margin: 1.5rem 0 0.75rem 0; font-size: 1.1rem; }
+        .card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .card-header { font-weight: 600; color: #667eea; margin-bottom: 0.75rem; font-size: 1.1rem; }
+        .collapsible { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 1rem 0; overflow: hidden; }
+        .collapsible-header { padding: 1rem 1.5rem; cursor: pointer; font-weight: 600; background: #edf2f7; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+        .collapsible-header:hover { background: #e2e8f0; }
+        .collapsible-header::after { content: '▼'; font-size: 0.8rem; transition: transform 0.3s; }
+        .collapsible-header.active::after { transform: rotate(-180deg); }
+        .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .collapsible-content.active { max-height: 2000px; transition: max-height 0.5s ease-in; }
+        .collapsible-inner { padding: 1.5rem; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600; margin-right: 0.5rem; }
+        .badge-beginner { background: #c6f6d5; color: #22543d; } .badge-intermediate { background: #fef3c7; color: #78350f; }
+        .badge-advanced { background: #fecaca; color: #7f1d1d; } .badge-expert { background: #ddd6fe; color: #4c1d95; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li { padding: 0.5rem 0; padding-left: 2rem; position: relative; }
+        .checklist li::before { content: '☐'; position: absolute; left: 0; color: #667eea; font-size: 1.2rem; }
+        .tip-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
+        .tip-box strong { color: #1e40af; }
+        .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
+        .warning-box strong { color: #92400e; }
+        .success-box { background: #d1fae5; border-left: 4px solid #10b981; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 4px; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        th { background: #f7fafc; font-weight: 600; color: #4a5568; }
+        tr:hover { background: #f7fafc; }
+        .quote { border-left: 4px solid #667eea; padding: 1rem 1.5rem; margin: 1.5rem 0; background: #f7fafc; font-style: italic; }
+        .button { display: inline-block; padding: 0.75rem 1.5rem; background: #667eea; color: white; text-decoration: none; border-radius: 6px; transition: background 0.3s; margin: 0.5rem 0.5rem 0.5rem 0; border: none; cursor: pointer; font-size: 1rem; }
+        .button:hover { background: #5a67d8; }
+        .button-secondary { background: #e2e8f0; color: #2d3748; }
+        .button-secondary:hover { background: #cbd5e0; }
+        .progress-bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; margin: 1rem 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); transition: width 0.3s; }
+        code { background: #f7fafc; padding: 0.2rem 0.4rem; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 0.9em; color: #d63384; }
+        pre { background: #2d3748; color: #e2e8f0; padding: 1.5rem; border-radius: 6px; overflow-x: auto; margin: 1.5rem 0; }
+        pre code { background: transparent; color: inherit; padding: 0; }
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; position: relative; min-height: auto; }
+            .main-content { padding: 1.5rem; }
+        }
+        .spinner-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 9999; }
+        .spinner { border: 4px solid #f3f3f3; border-top: 4px solid #667eea; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div>🧭 SPIN Selling Hub</div>
+        <div style="display:flex; gap:8px;">
+            <a href="../#/" title="Back to Knowledge Base Hub">⤴ Back to Hub</a>
+            <a href="https://github.com/summonelec/knowledgebase" target="_blank" rel="noopener">View on GitHub</a>
+            <a href="#" onclick="printSection();return false;">🖨️ Print</a>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>🎯 SPIN Selling Training System</h1>
+        <p>Summon Electronics | Master SPIN in 30 Days</p>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar" aria-label="Section Navigation">
+            <h3>Navigation</h3>
+            <div class="nav-item active" data-target="overview" onclick="showSection(event, 'overview')">📚 Overview</div>
+            <div class="nav-item" data-target="quick-start" onclick="showSection(event, 'quick-start')">🚀 Quick Start</div>
+            <div class="nav-item" data-target="week1" onclick="showSection(event, 'week1')">📅 Week 1: Foundation</div>
+            <div class="nav-item" data-target="week2" onclick="showSection(event, 'week2')">📅 Week 2: Progression</div>
+            <div class="nav-item" data-target="week3" onclick="showSection(event, 'week3')">📅 Week 3: Application</div>
+            <div class="nav-item" data-target="week4" onclick="showSection(event, 'week4')">📅 Week 4: Mastery</div>
+            <h3 style="margin-top: 2rem;">Resources</h3>
+            <div class="nav-item" data-target="pocket-guide" onclick="showSection(event, 'pocket-guide')">📋 Pocket Reference</div>
+            <div class="nav-item" data-target="industry-frameworks" onclick="showSection(event, 'industry-frameworks')">🏭 Industry Frameworks</div>
+            <div class="nav-item" data-target="objections" onclick="showSection(event, 'objections')">💬 Objection Handling</div>
+            <div class="nav-item" data-target="scenarios" onclick="showSection(event, 'scenarios')">🎭 Practice Scenarios</div>
+            <div class="nav-item" data-target="checklist" onclick="showSection(event, 'checklist')">✅ Self-Grading Checklist</div>
+            <div class="nav-item" data-target="transitions" onclick="showSection(event, 'transitions')">🔄 Transitions Guide</div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Overview Section -->
+            <section id="overview" class="section active" tabindex="-1">
+                <h2>Welcome to SPIN Selling</h2>
+                
+                <div class="card">
+                    <div class="card-header">What is SPIN?</div>
+                    <p>SPIN is a questioning methodology that moves prospects from awareness to action:</p>
+                    <ul style="margin: 1rem 0 1rem 2rem;">
+                        <li><strong>S</strong>ituation: Understand their current state</li>
+                        <li><strong>P</strong>roblem: Identify pain points</li>
+                        <li><strong>I</strong>mplication: Amplify the cost of inaction</li>
+                        <li><strong>N</strong>eed-Payoff: Get them to articulate why they need your solution</li>
+                    </ul>
+                </div>
+
+                <div class="success-box">
+                    <strong>Why SPIN Works:</strong> People believe what THEY say, not what YOU say. SPIN gets THEM to make your case.
+                </div>
+
+                <h3>The 30-Day Roadmap</h3>
+                <table>
+                    <tr><th>Week</th><th>Focus</th><th>Key Outcome</th></tr>
+                    <tr><td><strong>Week 1</strong></td><td>Situation & Problem Questions</td><td>Can identify prospect's #1 problem in 5 minutes</td></tr>
+                    <tr><td><strong>Week 2</strong></td><td>Implication & Need-Payoff Questions</td><td>Prospects say "I never thought about it that way"</td></tr>
+                    <tr><td><strong>Week 3</strong></td><td>Industry-Specific Application</td><td>Can execute CEM/OEM/Transit talk tracks naturally</td></tr>
+                    <tr><td><strong>Week 4</strong></td><td>Advanced Techniques & Mastery</td><td>60+ average on post-call self-grading</td></tr>
+                </table>
+
+                <h3>Success Metrics</h3>
+                <div class="card">
+                    <p><strong>By Day 30, you must achieve:</strong></p>
+                    <ul class="checklist">
+                        <li>1,000+ total dials</li>
+                        <li>100+ conversations</li>
+                        <li>50+ full SPIN sequences</li>
+                        <li>Close rate 30%+ on SPIN calls</li>
+                        <li>5+ deals closed using SPIN</li>
+                        <li>Score 16+ on all practice scenarios</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <strong>💡 Pro Tip:</strong> SPIN is not a script. It's a mindset. Be curious, not persuasive. Ask, don't tell. Let them convince themselves.
+                </div>
+            </section>
+
+            <!-- Quick Start Section -->
+            <section id="quick-start" class="section" tabindex="-1">
+                <h2>Quick Start: Your First Day</h2>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Don't read everything at once.</strong> Follow this exact sequence for your first day.
+                </div>
+
+                <h3>Step-by-Step First Day</h3>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Step 1: Print Your Essential Materials (10 minutes)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ul class="checklist">
+                                <li>Print Pocket Reference Card (laminate or tape to desk)</li>
+                                <li>Print 30 copies of Post-Call Self-Grading Checklist</li>
+                                <li>Open Daily Tracking Sheet in Excel/Google Sheets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Step 2: Learn the Basics (15 minutes)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p>Read and understand:</p>
+                            <ul style="margin-left: 2rem;">
+                                <li>What SPIN stands for (above)</li>
+                                <li>The SPIN sequence: S → P → I → N</li>
+                                <li>5 basic Situation questions</li>
+                            </ul>
+                            <div class="quote">
+                                "Walk me through your current process..."<br>
+                                "Who's involved in purchasing decisions?"<br>
+                                "How many suppliers do you work with?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Step 3: Make Your First 20 Calls (2 hours)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>ONLY use Situation questions today.</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Goal: Learn to ask and listen</li>
+                                <li>DO NOT pitch anything</li>
+                                <li>Take detailed notes</li>
+                                <li>Track in Daily Tracking Sheet</li>
+                            </ul>
+                            <div class="tip-box">
+                                <strong>Remember:</strong> 70% listening, 30% talking
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Step 4: Grade Your Best Call (10 minutes)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p>After your best conversation:</p>
+                            <ul style="margin-left: 2rem;">
+                                <li>Fill out Post-Call Self-Grading Checklist</li>
+                                <li>Be honest with your scores</li>
+                                <li>Note what you'd do differently</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Common First-Day Mistakes</h3>
+                <div class="card">
+                    <p><strong>❌ Pitching too early:</strong> You're not selling yet. Just learning about them.</p>
+                    <p><strong>❌ Jumping to Problem questions:</strong> Stick to Situation only on Day 1.</p>
+                    <p><strong>❌ Not taking notes:</strong> You'll forget everything if you don't write it down.</p>
+                    <p><strong>❌ Talking too much:</strong> If you're talking more than 30%, stop and ask another question.</p>
+                </div>
+
+                <div class="success-box">
+                    <strong>Day 1 Success = </strong> Made 20 calls, asked only Situation questions, took good notes, didn't pitch anything.
+                </div>
+            </section>
+
+            <!-- Week 1 Section -->
+            <section id="week1" class="section" tabindex="-1">
+                <h2>Week 1: Foundation (Days 1-7)</h2>
+                
+                <div class="card">
+                    <div class="card-header">Weekly Goal</div>
+                    <p>Master Situation & Problem questions. Learn to identify specific pain points.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                </div>
+
+                <h3>Days 1-3: Situation Questions Only</h3>
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Your Mission
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p>Learn to research and ask great Situation questions.</p>
+                            <ul class="checklist">
+                                <li>20 calls per day (ONLY Situation questions)</li>
+                                <li>Research 10 companies each morning (5 min each)</li>
+                                <li>Write down 3 Situation questions for each company</li>
+                                <li>Take detailed notes in CRM</li>
+                                <li>Listen 70%, talk 30%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Core Situation Questions
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>General:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"Walk me through your current process for sourcing electronic parts."</li>
+                                <li>"Who's involved in purchasing decisions at your company?"</li>
+                                <li>"How many suppliers do you typically work with?"</li>
+                                <li>"What system do you use to manage inventory?"</li>
+                            </ul>
+                            
+                            <p style="margin-top: 1rem;"><strong>CEM-Specific:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"How many production lines are you running?"</li>
+                                <li>"What's your typical lead time from PO to delivery?"</li>
+                                <li>"Do you handle box-build or focus on PCBA?"</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem;"><strong>OEM-Specific:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"How many active products do you have in production?"</li>
+                                <li>"What's your process when a part goes EOL?"</li>
+                                <li>"Who handles component engineering versus purchasing?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Days 4-7: Add Problem Questions</h3>
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        The Bridge: Situation → Problem
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p>Use what you learned from Situation questions to naturally transition:</p>
+                            <div class="quote">
+                                "You mentioned you work with 8 suppliers... <strong>that makes me curious</strong> – what's the biggest challenge with managing that many relationships?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Core Problem Questions
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>Supply Chain Problems:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"When a part goes on allocation, what happens to your production schedule?"</li>
+                                <li>"How often do you encounter parts that are hard to find?"</li>
+                                <li>"Have you ever missed a delivery deadline due to parts shortages?"</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem;"><strong>Cost Problems:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"Have tariffs impacted your component costs this year?"</li>
+                                <li>"Do you ever pay expedite fees to hit deadlines?"</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem;"><strong>Compliance Problems:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"Have you had shipments delayed due to missing documentation?"</li>
+                                <li>"How much time does your team spend on customs paperwork?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Week 1 Graduation Requirements</h3>
+                <ul class="checklist">
+                    <li>140+ total dials (20/day)</li>
+                    <li>35+ conversations</li>
+                    <li>Can ask 5 Situation questions naturally</li>
+                    <li>Can identify specific Problem in 5 minutes</li>
+                    <li>Resisted urge to pitch (scored 0 pitches)</li>
+                    <li>Manager has observed 2 calls and approved</li>
+                </ul>
+            </section>
+
+            <!-- Week 2 Section -->
+            <section id="week2" class="section" tabindex="-1">
+                <h2>Week 2: Progression (Days 8-14)</h2>
+                
+                <div class="card">
+                    <div class="card-header">Weekly Goal</div>
+                    <p>Master Implication & Need-Payoff questions. Make pain real and let them sell themselves.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <h3>Days 8-10: Add Implication Questions</h3>
+                <div class="warning-box">
+                    <strong>⚠️ This is where amateur reps fail.</strong> They find the problem but don't make it HURT.
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        The Formula
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ol style="margin-left: 2rem;">
+                                <li>They tell you the problem</li>
+                                <li>You ask about the CONSEQUENCES</li>
+                                <li>They convince themselves it's urgent</li>
+                            </ol>
+                            
+                            <h4>Example:</h4>
+                            <div class="quote">
+                                <strong>Problem:</strong> "We sometimes miss deadlines due to parts shortages."<br><br>
+                                <strong>❌ Bad response:</strong> "We can help with that! We stock parts."<br><br>
+                                <strong>✅ Good response:</strong> "That's frustrating. What happens when you miss a deadline? How does your customer react?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Core Implication Questions
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>Financial Implications:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"When production stops, what does that cost you per day?"</li>
+                                <li>"If tariffs keep rising, how does that affect your margins?"</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem;"><strong>Operational Implications:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"When you miss a dock date, what's the cascade effect?"</li>
+                                <li>"If you're managing 10 suppliers, how much admin time does that consume?"</li>
+                            </ul>
+
+                            <p style="margin-top: 1rem;"><strong>Relationship Implications:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"If you keep missing deadlines, how does that affect customer relationships?"</li>
+                                <li>"Have you lost bids because competitors could guarantee better lead times?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <strong>Success Indicator:</strong> The prospect says "Wow, I never thought about it that way" or "We really need to fix this."
+                </div>
+
+                <h3>Days 11-14: Complete SPIN Sequence</h3>
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        Need-Payoff Questions
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p>After they've articulated implications, ask them to envision the solution:</p>
+                            <div class="quote">
+                                "So if I'm hearing you right, missing dock dates is causing real problems with your OEM customers. <strong>What would it mean to your business if</strong> you could guarantee parts availability?"
+                            </div>
+
+                            <p style="margin-top: 1rem;"><strong>Specific to Summon:</strong></p>
+                            <ul style="margin-left: 2rem;">
+                                <li>"If we stocked 12 months of critical parts at locked prices, would that help?"</li>
+                                <li>"If we handled all customs paperwork, would that free up your team?"</li>
+                                <li>"Would having a partner who sources from ANY manufacturer give you leverage?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        The Full SPIN Call (10-15 minutes)
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>Opening:</strong> "Hi [Name], I help companies solve supply chain challenges. Do you have 5 minutes?"</p>
+                            <p><strong>Situation (2 min):</strong> "Before I explain what we do, can I ask about your current sourcing process?"</p>
+                            <p><strong>Problem (2 min):</strong> "A lot of companies mention challenges with [X]. Is that something you deal with?"</p>
+                            <p><strong>Implication (2 min):</strong> "When that happens, what's the impact on production/costs/customers?"</p>
+                            <p><strong>Need-Payoff (2 min):</strong> "If we could solve that, how would that change things for you?"</p>
+                            <p><strong>Close:</strong> "Based on what you've shared, I think we can help. Can I send you a proposal?"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Week 2 Graduation Requirements</h3>
+                <ul class="checklist">
+                    <li>500+ total dials (cumulative)</li>
+                    <li>50+ conversations</li>
+                    <li>20+ full SPIN sequences executed</li>
+                    <li>Can ask 3+ Implication questions that land</li>
+                    <li>Prospects articulate Need-Payoff (not you)</li>
+                    <li>10+ prospects agreed to next step</li>
+                </ul>
+            </section>
+
+            <!-- Pocket Guide Section -->
+            <section id="pocket-guide" class="section" tabindex="-1">
+                <h2>📋 Pocket Reference Guide</h2>
+                
+                <div class="tip-box">
+                    <strong>💡 Print this section</strong> and keep it by your phone during calls.
+                </div>
+
+                <h3>The SPIN Sequence (Always In Order)</h3>
+                <div class="card">
+                    <pre style="background: #f7fafc; color: #2d3748; padding: 1.5rem;">
+S → P → I → N
+
+Do I understand their business? → SITUATION
+Do I know their #1 problem? → PROBLEM
+Do they feel the urgency? → IMPLICATION
+Have they sold themselves? → NEED-PAYOFF
+                    </pre>
+                </div>
+
+                <h3>Quick Stage Identifier</h3>
+                <table>
+                    <tr><th>Ask Yourself</th><th>Stage You Need</th></tr>
+                    <tr><td>"Do I know what they do?"</td><td>SITUATION</td></tr>
+                    <tr><td>"Do I know their pain?"</td><td>PROBLEM</td></tr>
+                    <tr><td>"Do they feel the urgency?"</td><td>IMPLICATION</td></tr>
+                    <tr><td>"Have they sold themselves?"</td><td>NEED-PAYOFF</td></tr>
+                </table>
+
+                <h3>The 5 Best Universal Questions</h3>
+                <ol style="margin-left: 2rem;">
+                    <li>"Walk me through your current sourcing process."</li>
+                    <li>"What's your biggest challenge with current suppliers?"</li>
+                    <li>"When that happens, what does it cost you?"</li>
+                    <li>"How does that affect your customer relationships?"</li>
+                    <li>"What would it mean if you never had to deal with that again?"</li>
+                </ol>
+
+                <h3>Daily Goals Checklist</h3>
+                <ul class="checklist">
+                    <li>50+ Dials</li>
+                    <li>10+ Conversations</li>
+                    <li>5+ Reached Problem stage</li>
+                    <li>3+ Reached Implication stage</li>
+                    <li>2+ Full SPIN sequences</li>
+                    <li>Update CRM same day</li>
+                </ul>
+
+                <h3>Common Mistakes to Avoid</h3>
+                <div class="card">
+                    <p>❌ Pitching before Problem</p>
+                    <p>❌ Stopping at Problem (go to Implication!)</p>
+                    <p>❌ Telling them their pain (ask, don't tell)</p>
+                    <p>❌ Talking more than listening</p>
+                    <p>❌ Leading questions ("Don't you think...")</p>
+                </div>
+
+                <div class="success-box">
+                    <strong>Remember:</strong> SPIN = Curiosity, Not Persuasion. They believe what THEY say, not what YOU say.
+                </div>
+            </section>
+
+            <!-- Placeholders & remaining sections -->
+            <section id="week3" class="section" tabindex="-1">
+                <h2>Week 3: Application (Days 15-21)</h2>
+                <div class="card">
+                    <div class="card-header">Content coming in full version...</div>
+                    <p>This section contains industry-specific application, multi-threading techniques, and territory planning strategies.</p>
+                </div>
+            </section>
+
+            <section id="week4" class="section" tabindex="-1">
+                <h2>Week 4: Mastery (Days 22-30)</h2>
+                <div class="card">
+                    <div class="card-header">Content coming in full version...</div>
+                    <p>This section contains advanced techniques, complex deal navigation, and graduation requirements.</p>
+                </div>
+            </section>
+
+            <section id="industry-frameworks" class="section" tabindex="-1">
+                <h2>🏭 Industry-Specific Frameworks</h2>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <span class="badge badge-intermediate">CEM/EMS</span> Contract Manufacturers
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>What they do:</strong> Build products for other companies</p>
+                            <p><strong>Their pain:</strong> Tight schedules, thin margins, line shutdowns</p>
+                            <p><strong>What they care about:</strong> Speed, locked pricing, stocking programs</p>
+                            
+                            <h4>Situation Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"How many production lines are you running?"</li>
+                                <li>"What's your typical lead time from PO to dock date?"</li>
+                                <li>"Walk me through what happens when you get a hot shortage."</li>
+                            </ul>
+
+                            <h4>Problem Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"When a part goes on allocation, what happens to your schedule?"</li>
+                                <li>"How often do shortages cause you to shut down a line?"</li>
+                                <li>"Have you ever missed a dock date and paid penalties?"</li>
+                            </ul>
+
+                            <h4>Implication Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"When a line shuts down, what does that cost per hour?"</li>
+                                <li>"If you miss dock dates, how does that affect your OEM relationships?"</li>
+                                <li>"When you pay expedite fees regularly, how does that eat into margins?"</li>
+                            </ul>
+
+                            <h4>Need-Payoff Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"If we stocked 6-12 months of critical parts at locked prices, would that help?"</li>
+                                <li>"What would it mean if you never paid expedite fees again?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <span class="badge badge-advanced">OEM</span> Original Equipment Manufacturers
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>What they do:</strong> Design and build their own products</p>
+                            <p><strong>Their pain:</strong> Long lifecycles, obsolescence, engineering approval</p>
+                            <p><strong>What they care about:</strong> Obsolete parts, alternates, engineering support</p>
+                            
+                            <h4>Situation Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"What's a typical product lifecycle for you?"</li>
+                                <li>"Walk me through what happens when a component goes EOL."</li>
+                            </ul>
+
+                            <h4>Problem Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"How often do parts go EOL mid-lifecycle?"</li>
+                                <li>"Have you had to redesign a board because you couldn't find an alternate?"</li>
+                            </ul>
+
+                            <h4>Implication Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"When you redesign due to obsolescence, what does that cost?"</li>
+                                <li>"If launches get delayed, how does that affect revenue?"</li>
+                            </ul>
+
+                            <h4>Need-Payoff Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"If we provided pre-vetted alternates with full specs, would that speed up approval?"</li>
+                                <li>"What if you had a partner who specializes in obsolete parts?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <span class="badge badge-expert">Transit/Public</span> Transit Authorities & Public Sector
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>What they do:</strong> Government agencies, transportation, utilities</p>
+                            <p><strong>Their pain:</strong> Legacy systems (20-60 years old), strict compliance</p>
+                            <p><strong>What they care about:</strong> Documentation, traceability, PPAP, certs</p>
+                            
+                            <h4>Situation Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"How old is your fleet or infrastructure?"</li>
+                                <li>"What compliance documentation do you require from suppliers?"</li>
+                            </ul>
+
+                            <h4>Problem Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"When you need parts for 30-year-old equipment, how easy is it to find them?"</li>
+                                <li>"Do suppliers typically provide all the documentation you need?"</li>
+                            </ul>
+
+                            <h4>Implication Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"When vehicles are out of service, what's the impact on ridership?"</li>
+                                <li>"How does public perception change when service is disrupted?"</li>
+                            </ul>
+
+                            <h4>Need-Payoff Questions:</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>"If we provided full PPAP and traceability for every part, would that reduce audit risk?"</li>
+                                <li>"What if you had a supplier who specializes in obsolete transit parts?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="objections" class="section" tabindex="-1">
+                <h2>💬 Objection Handling via SPIN</h2>
+                
+                <div class="tip-box">
+                    <strong>💡 Key Principle:</strong> Don't "overcome" objections. Use SPIN to reframe the conversation.
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        "We only buy from authorized distributors"
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <h4>❌ Old Way (Defensive)</h4>
+                            <p>"We're not a broker! We're an independent distributor with full traceability..."</p>
+                            
+                            <h4>✅ SPIN Way (Curious)</h4>
+                            <div class="quote">
+                                <strong>Situation:</strong> "That makes sense. Do your authorized distributors carry EVERY manufacturer you need?"<br><br>
+                                <strong>Problem:</strong> "What happens when you need one they don't support?"<br><br>
+                                <strong>Implication:</strong> "So instead of one distributor, you're managing how many extra relationships?"<br><br>
+                                <strong>Need-Payoff:</strong> "If you had one partner who could source ANY manufacturer with full traceability, would that simplify your supply chain?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        "Your prices are higher"
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <h4>❌ Old Way</h4>
+                            <p>"Let me check with my manager and see if I can do better."</p>
+                            
+                            <h4>✅ SPIN Way</h4>
+                            <div class="quote">
+                                <strong>Situation:</strong> "Can I ask - what does that other quote include? Is it apples-to-apples on lead time?"<br><br>
+                                <strong>Problem:</strong> "If you can't get parts for 12 weeks, what happens?"<br><br>
+                                <strong>Implication:</strong> "What's the cost of missing that dock date? If the penalty is 10% and you save 15% on parts but lose 10% on penalty, are you really saving?"<br><br>
+                                <strong>Need-Payoff:</strong> "You're not buying parts, you're buying on-time delivery. If we can guarantee you'll hit your dock date, is that worth a premium?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        "We're all set with our current suppliers"
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <h4>❌ Old Way</h4>
+                            <p>"Well, if anything changes, keep us in mind!"</p>
+                            
+                            <h4>✅ SPIN Way</h4>
+                            <div class="quote">
+                                <strong>Situation:</strong> "That's great. Are those suppliers able to handle EVERYTHING, or do you ever have gaps?"<br><br>
+                                <strong>Problem:</strong> "So when that happens, what do you do?"<br><br>
+                                <strong>Implication:</strong> "When you're scrambling or redesigning, how does that affect timeline and costs?"<br><br>
+                                <strong>Need-Payoff:</strong> "Would it be helpful to have a backup partner who specializes in those hard-to-find, gap-filler parts?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        "Just send me an email"
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <h4>❌ Old Way</h4>
+                            <p>"Sure, what's your email?" [sends generic email that gets ignored]</p>
+                            
+                            <h4>✅ SPIN Way</h4>
+                            <div class="quote">
+                                <strong>Situation:</strong> "Happy to. Before I send something generic, can I ask one quick question? What's your biggest sourcing challenge right now?"<br><br>
+                                <strong>Problem:</strong> "How often does that come up?"<br><br>
+                                <strong>Implication:</strong> "When you can't find those parts, what happens?"<br><br>
+                                <strong>Need-Payoff:</strong> "If I send you examples of how we've solved that, would that be useful? And can I follow up Thursday to discuss?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="scenarios" class="section" tabindex="-1">
+                <h2>🎭 Practice Scenarios</h2>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Practice Until You Score 16+/25 on Each Scenario</strong>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">How to Practice</div>
+                    <p><strong>Solo:</strong> Write out your questions, compare to examples, score yourself</p>
+                    <p><strong>Partner:</strong> Partner plays buyer using response guide, scores you after</p>
+                    <p><strong>Goal:</strong> 16+ points = ready for real calls in that situation</p>
+                </div>
+
+                <h3>10 Scenarios (Beginner to Expert)</h3>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <span class="badge badge-intermediate">Scenario 1</span> Skeptical CEM Buyer
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>Setup:</strong> Buyer is happy with current suppliers (Arrow/Digi-Key). Don't see why they need you.</p>
+                            <p><strong>Your Goal:</strong> Uncover hidden problems, position as backup supplier</p>
+                            
+                            <h4>Scoring Rubric (25 points):</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>Asked 3+ Situation questions before pitching (0-5)</li>
+                                <li>Uncovered specific problem (0-5)</li>
+                                <li>Asked 2+ Implication questions (0-5)</li>
+                                <li>Got prospect to articulate Need-Payoff (0-5)</li>
+                                <li>Positioned as backup, not replacement (0-5)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <span class="badge badge-advanced">Scenario 2</span> OEM Engineer in Crisis
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>Setup:</strong> Critical part just went EOL. Product mid-lifecycle. Production stops in 4 weeks.</p>
+                            <p><strong>Your Goal:</strong> Understand urgency, position as obsolescence specialists</p>
+                            
+                            <h4>Scoring Rubric (25 points):</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>Understood technical situation quickly (0-5)</li>
+                                <li>Quantified urgency (timeline, cost, impact) (0-5)</li>
+                                <li>Made implications concrete (0-5)</li>
+                                <li>Offered TWO solutions (exact part OR alternates) (0-5)</li>
+                                <li>Committed to fast response (24-48 hrs) (0-5)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <span class="badge badge-advanced">Scenario 3</span> Price Objection
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <p><strong>Setup:</strong> You quoted $2.50. Their current supplier quoted $2.00. They want you to match.</p>
+                            <p><strong>Your Goal:</strong> Reframe from unit price to total cost of ownership</p>
+                            
+                            <h4>Scoring Rubric (25 points):</h4>
+                            <ul style="margin-left: 2rem;">
+                                <li>Did NOT immediately offer discount (0-5)</li>
+                                <li>Uncovered hidden costs (expedite fees, delays) (0-5)</li>
+                                <li>Quantified total cost difference (0-5)</li>
+                                <li>Got them to see value of guaranteed lead time (0-5)</li>
+                                <li>Offered TCO analysis, not just lower price (0-5)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;"><em>7 more scenarios available in full training deck...</em></p>
+            </section>
+
+            <section id="checklist" class="section" tabindex="-1">
+                <h2>✅ Post-Call Self-Grading Checklist</h2>
+                
+                <div class="tip-box">
+                    <strong>💡 Use After Every Significant Call</strong> - Print 50 copies and keep at your desk
+                </div>
+
+                <h3>Quick Self-Assessment (15 Items, 75 Points)</h3>
+                
+                <div class="card">
+                    <h4>Situation Questions (15 points)</h4>
+                    <p>1. Did I ask 3+ Situation questions before pitching? (1-5)</p>
+                    <p>2. Did I understand their business before moving on? (1-5)</p>
+                    <p>3. Did I listen more than I talked (70/30)? (1-5)</p>
+                </div>
+
+                <div class="card">
+                    <h4>Problem Questions (15 points)</h4>
+                    <p>4. Did I identify at least ONE specific problem? (1-5)</p>
+                    <p>5. Did I go deep on that problem vs jumping around? (1-5)</p>
+                    <p>6. Did THEY articulate the problem (not me)? (1-5)</p>
+                </div>
+
+                <div class="card">
+                    <h4>Implication Questions (20 points)</h4>
+                    <p>7. Did I ask "What happens when..." or similar? (1-5)</p>
+                    <p>8. Did I make the cost/impact concrete? (1-5)</p>
+                    <p>9. Did I explore ripple effects? (1-5)</p>
+                    <p>10. Did the prospect seem to realize it's urgent? (1-5)</p>
+                </div>
+
+                <div class="card">
+                    <h4>Need-Payoff Questions (15 points)</h4>
+                    <p>11. Did THEY articulate the value (not me)? (1-5)</p>
+                    <p>12. Were my questions specific to THEIR pain? (1-5)</p>
+                    <p>13. Did I tie to a specific Summon solution? (1-5)</p>
+                </div>
+
+                <div class="card">
+                    <h4>Closing (10 points)</h4>
+                    <p>14. Did I secure a clear next step? (1-5)</p>
+                    <p>15. Did I update CRM immediately? (1-5)</p>
+                </div>
+
+                <h3>Scoring Guide</h3>
+                <table>
+                    <tr><th>Score</th><th>Assessment</th></tr>
+                    <tr><td>60-75</td><td>✅ Excellent - You're mastering SPIN</td></tr>
+                    <tr><td>45-59</td><td>👍 Solid - Keep refining</td></tr>
+                    <tr><td>30-44</td><td>⚠️ Decent - Focus on weak areas</td></tr>
+                    <tr><td>Below 30</td><td>❌ Needs work - Review SPIN basics</td></tr>
+                </table>
+            </section>
+
+            <section id="transitions" class="section" tabindex="-1">
+                <h2>🔄 Transition Phrases & Decision Tree</h2>
+                
+                <h3>The SPIN Decision Tree</h3>
+                <pre style="background: #2d3748; color: #e2e8f0;">
+START CALL
+    ↓
+Do I understand their business?
+    ↓
+NO → ASK SITUATION QUESTIONS
+    ↓
+YES → Do I know their #1 problem?
+    ↓
+NO → ASK PROBLEM QUESTIONS
+    ↓
+YES → Do they understand the cost/impact?
+    ↓
+NO → ASK IMPLICATION QUESTIONS
+    ↓
+YES → Have they told me why they need a solution?
+    ↓
+NO → ASK NEED-PAYOFF QUESTIONS
+    ↓
+YES → SECURE NEXT STEP & CLOSE
+                </pre>
+
+                <h3>Transition Phrases</h3>
+                
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        SITUATION → PROBLEM
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ul style="margin-left: 2rem;">
+                                <li>"That's helpful. I'm curious - what's your biggest challenge with [X]?"</li>
+                                <li>"Got it. A lot of companies mention issues with [X]. Is that something you deal with?"</li>
+                                <li>"When [situation], what typically goes wrong?"</li>
+                                <li>"That makes sense. What keeps you up at night about [their operation]?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        PROBLEM → IMPLICATION
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ul style="margin-left: 2rem;">
+                                <li>"When that happens, what's the impact on [production/budget]?"</li>
+                                <li>"Interesting. What does that cost you?"</li>
+                                <li>"Beyond [first impact], what's the ripple effect?"</li>
+                                <li>"If that keeps happening, what might be the long-term consequence?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        IMPLICATION → NEED-PAYOFF
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ul style="margin-left: 2rem;">
+                                <li>"So if I'm hearing you right, [summarize]. What would it mean if you could eliminate that?"</li>
+                                <li>"If we could solve [problem], how would that change things?"</li>
+                                <li>"What would it be worth to avoid [consequences]?"</li>
+                                <li>"How would your life be different if [solution]?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        NEED-PAYOFF → CLOSE
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ul style="margin-left: 2rem;">
+                                <li>"Based on what you've shared, I think we can help. Can I send you a proposal?"</li>
+                                <li>"Let me put together a one-page summary. What's your email?"</li>
+                                <li>"Do you have 15 minutes next [day] to discuss specifics?"</li>
+                                <li>"This sounds like a good fit. What's the next step on your end?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>The 3-Second Rule</h3>
+                <div class="warning-box">
+                    <strong>After you ask a question, count to 3 before speaking again.</strong><br><br>
+                    Most reps fill silence immediately. Great reps let silence work for them.<br><br>
+                    Example: You ask "What does that cost you?" → Count 1... 2... 3... → They reveal the real cost
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="spinner-overlay" id="spinner">
+        <div class="spinner" role="status" aria-label="Loading"></div>
+    </div>
+
+    <script>
+        // Hash-aware navigation
+        function showSection(evt, sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            const target = document.getElementById(sectionId);
+            target.classList.add('active');
+            target.focus({preventScroll:true});
+            // Update nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+            // Update hash
+            if (location.hash !== '#'+sectionId) history.replaceState(null, '', '#'+sectionId);
+            // Scroll top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function loadFromHash() {
+            const hash = (location.hash || '').replace('#','') || 'overview';
+            const navEl = document.querySelector('.nav-item[data-target=\"'+hash+'\"]');
+            if (navEl) {
+                navEl.click();
+            } else {
+                // default
+                const first = document.querySelector('.nav-item[data-target=\"overview\"]');
+                if (first) first.click();
+            }
+        }
+
+        window.addEventListener('hashchange', loadFromHash);
+        window.addEventListener('DOMContentLoaded', loadFromHash);
+
+        // Collapsible sections
+        function toggleCollapsible(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+        }
+
+        // Print functionality
+        function printSection() { window.print(); }
+    </script>
+</body>
+</html>
